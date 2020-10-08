@@ -37,12 +37,11 @@ if (RANGES_VERBOSE_BUILD)
   message(STATUS "[range-v3]: verbose build enabled.")
 endif()
 
-CMAKE_DEPENDENT_OPTION(RANGE_V3_TESTS
-  "Build the Range-v3 tests and integrate with ctest"
-  ON "${is_standalone}" OFF)
+option(RANGE_V3_TESTS "" OFF)
+option(RANGE_V3_EXAMPLES "" OFF)
 
-CMAKE_DEPENDENT_OPTION(RANGE_V3_EXAMPLES
-  "Build the Range-v3 examples and integrate with ctest"
+CMAKE_DEPENDENT_OPTION(RANGE_V3_DOCS
+  "Build the Range-v3 tests and integrate with ctest"
   ON "${is_standalone}" OFF)
 
 CMAKE_DEPENDENT_OPTION(RANGE_V3_PERF
