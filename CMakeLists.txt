@@ -7,8 +7,8 @@
 
 cmake_minimum_required(VERSION 3.6)
 get_directory_property(is_subproject PARENT_DIRECTORY)
-if(RANGE_V3_FORCE_STANDALONE)
-    set(is_stanalone YES)
+if(RANGE_V3_FORCE_NOT_STANDALONE)
+    set(is_standalone NO)
 else()
 
     if(NOT is_subproject)
@@ -18,6 +18,9 @@ else()
     endif()
 
 endif()
+
+message(STATUS "is_standalone:" ${is_standalone})
+
 
 project(Range-v3 CXX)
 
